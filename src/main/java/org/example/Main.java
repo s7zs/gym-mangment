@@ -15,7 +15,7 @@ public class Main {
             System.out.println("Connected to database: " + db.getName());
 
             MongoCollection<Document> aooseCollection = db.getCollection("first");
-
+//comm
 
             Document member = new Document("name", "Test Member")
                     .append("age", 25)
