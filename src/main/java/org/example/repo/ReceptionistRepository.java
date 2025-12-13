@@ -88,7 +88,7 @@ public class ReceptionistRepository {
                 .append("freezed", m.freezed)
 
                 .append("phone", m.getPhone())
-                .append("email", m.getEmail())
+                
                 .append("membershipType", m.getMembershipType())
                 .append("membershipStart", m.getMembershipStart())
                 .append("membershipEnd", m.getMembershipEnd());

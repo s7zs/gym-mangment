@@ -1,4 +1,4 @@
-package org.example.services;
+package services;
 
 import org.example.model.member;
 import org.example.model.Appointment;
@@ -29,8 +29,7 @@ public class ReceptionistService {
         if (m == null) throw new IllegalArgumentException("Member is null");
         if (m.getUsername() == null || m.getUsername().isBlank())
             throw new IllegalArgumentException("username is required");
-        if (m.getEmail() == null || m.getEmail().isBlank())
-            throw new IllegalArgumentException("email is required");
+     
 
         repo.saveMember(m);
     }

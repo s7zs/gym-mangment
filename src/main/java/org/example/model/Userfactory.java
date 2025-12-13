@@ -6,11 +6,11 @@ public  class Userfactory {
             case trainer:
                 return new trainer(username, password);
             case member:
-                return new Manager(username, password);
+                return new member(username, password);
             case receptionist:
-                return new Employee(username, password);
+                return new receptionist(username, password);
             case physiotherapist:
-                return new Guest(username, password);
+                return new physitherapist(username, password);
             default:
                 throw new IllegalArgumentException("Invalid user role: " + role);
         }

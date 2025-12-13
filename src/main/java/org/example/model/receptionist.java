@@ -1,22 +1,17 @@
 package org.example.model;
 public class receptionist extends users{
-    private String fullName;
-    private String phone;
+private String phone;
+private String experienceYear;
 
-    public receptionist(Roles role, String password, String username, String fullName, String phone, String experienceYear) {
+
+    public receptionist(Roles role, String password, String username, String phone, String experienceYear) {
         super(Roles.receptionist, password, username);
-        this.fullName = fullName;
+        
         this.phone = phone;
         this.experienceYear = experienceYear;
     }
 
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
+   
 
     public String getPhone() {
         return phone;
@@ -35,8 +30,10 @@ public class receptionist extends users{
     }
 
 
-    private String experienceYear;
-    public receptionist(Roles role, String password, String username) {
+   
+    public receptionist( String password, String username) {
         super(Roles.receptionist, password, username);
+        this.phone = "0";
+        this.experienceYear = "0y";
     }
 }
