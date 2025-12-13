@@ -8,6 +8,8 @@ import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
 import org.bson.types.ObjectId;
+import org.example.model.Roles;
+import org.example.model.Userfactory;
 import org.example.model.users;
 
 import java.util.ArrayList;
@@ -25,6 +27,28 @@ public class Userrepo {
         this.gson = new Gson();
     }
 
+    /**
+     * Create and save a new user using the Factory Pattern
+     * This ensures all user creation goes through Userfactory
+     * 
+     * @param role User role (member, trainer, receptionist, physiotherapist)
+     * @param username Username for the new user
+     * @param password Password for the new user
+     * @return The ID of the created user
+     */
+    public String createUser(Roles role, String username, String password) {
+        // Use Factory Pattern to create user
+        users user = Userfactory.createUser(role, username, password);
+        return create(user);
+    }
+
+    /**
+     * Create and save a user object directly
+     * Note: Prefer using createUser(Roles, String, String) to ensure Factory Pattern usage
+     * 
+     * @param user User object to save
+     * @return The ID of the created user
+     */
     public String create(users user) {
         String json = gson.toJson(user);
         Document doc = Document.parse(json);

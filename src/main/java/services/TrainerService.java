@@ -1,5 +1,6 @@
 package services;
-
+import org.example.repo.TrainerRepository;
+import org.example.model.*;
 import java.util.List;
 
 public class TrainerService {
